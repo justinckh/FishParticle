@@ -35,7 +35,7 @@ export function initializeGUI(
   clock,
   isPaused,
   pausedTime,
-  flipX
+  flipX,
 ) {
   debugObject.controllers = {};
   debugObject.gridSize = 100;
@@ -196,7 +196,7 @@ export function initializeGUI(
           loadConfiguration("./fish_config/Fish1_Settings.json");
         },
       },
-      "loadFish1"
+      "loadFish1",
     )
     .name("Fish 1");
   const fish1Elem = fish1.domElement;
@@ -208,7 +208,7 @@ export function initializeGUI(
           loadConfiguration("./fish_config/Fish2_Settings.json");
         },
       },
-      "loadFish2"
+      "loadFish2",
     )
     .name("Fish 2");
   const fish2Elem = fish2.domElement;
@@ -219,7 +219,7 @@ export function initializeGUI(
           loadConfiguration("./fish_config/Fish3_Settings.json");
         },
       },
-      "loadFish3"
+      "loadFish3",
     )
     .name("Fish 3");
   const fish3Elem = fish3.domElement;
@@ -239,7 +239,7 @@ export function initializeGUI(
           loadConfiguration("./fish_config/Fish4_Settings.json");
         },
       },
-      "loadFish4"
+      "loadFish4",
     )
     .name("Fish 4");
 
@@ -252,7 +252,7 @@ export function initializeGUI(
           loadConfiguration("./fish_config/Fish5_Settings.json");
         },
       },
-      "loadFish5"
+      "loadFish5",
     )
     .name("Fish 5");
 
@@ -265,7 +265,7 @@ export function initializeGUI(
           loadConfiguration("./fish_config/Fish6_Settings.json");
         },
       },
-      "loadFish6"
+      "loadFish6",
     )
     .name("Fish 6");
 
@@ -288,8 +288,6 @@ export function initializeGUI(
     await loadConfiguration("./fish_config/Fish6_Settings.json");
     await loadConfiguration("./fish_config/Fish1_Settings.json");
   }
-
-  loadConfigurationsInOrder();
 
   fish4.domElement.classList.add("load-fish-button");
   fish5.domElement.classList.add("load-fish-button");
@@ -332,7 +330,7 @@ export function initializeGUI(
           }
         },
       },
-      "togglePause"
+      "togglePause",
     )
     .name("Pause/Resume Time");
 
@@ -350,9 +348,7 @@ export function initializeGUI(
   captureBtnElem.style.width = "50%";
 
   debugObject.outputFileName = "output";
-  gui
-    .add(debugObject, "outputFileName")
-    .name("Output File Name");
+  gui.add(debugObject, "outputFileName").name("Output File Name");
 
   gui.add(debugObject, "recordingTime").name("Recording Time (s)").listen();
 
@@ -366,10 +362,10 @@ export function initializeGUI(
             camera,
             startBtn,
             stopBtn,
-            debugObject.transparentBG
+            debugObject.transparentBG,
           ),
       },
-      "startRecording"
+      "startRecording",
     )
     .name("Start Recording")
     .onChange(() =>
@@ -379,8 +375,8 @@ export function initializeGUI(
         camera,
         startBtn,
         stopBtn,
-        debugObject.transparentBG
-      )
+        debugObject.transparentBG,
+      ),
     );
 
   const stopBtn = gui
@@ -391,10 +387,10 @@ export function initializeGUI(
             renderer,
             startBtn,
             stopBtn,
-            debugObject.outputFileName
+            debugObject.outputFileName,
           ),
       },
-      "stopRecording"
+      "stopRecording",
     )
     .name("Stop Recording")
     .disable();
