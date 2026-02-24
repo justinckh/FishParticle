@@ -1,0 +1,90 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  overflow: hidden;
+}
+
+.webgl {
+  position: fixed;
+  top: 0;
+  left: 0;
+  outline: none;
+}
+.lil-gui .name {
+  font-size: 10px;
+}
+
+input[aria-labelledby^="lil-gui-name-"] {
+  font-size: 12px; /* Change to your desired font size */
+}
+
+/* Container to maintain 16:9 aspect ratio */
+.canvas-container {
+  position: fixed; /* Fixed to viewport */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Center the container */
+  /* Set width to full viewport width and calculate height to maintain 16:9 */
+  width: 100vw;
+  height: calc(100vw * 9 / 16);
+
+  /* Ensure the container does not exceed the viewport height */
+  max-width: calc(100vh * 16 / 9);
+  max-height: 100vh;
+  aspect-ratio: 16 / 9; /* Enforce 16:9 ratio */
+  background: white;
+}
+
+canvas.webgl {
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+/* 1. Ensure the parent container is a flex container 
+
+/* 2. Style the Load Fish buttons */
+.load-fish-button {
+  font-size: 100px;
+}
+
+#main-content {
+  display: none;
+  position: fixed; /* Ensure it covers the entire screen */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: grey; /* Or any desired background */
+  padding: 20px;
+  box-sizing: border-box;
+  overflow: hidden; /* Prevent scrollbars */
+  border: none; /* Remove border-radius and shadow if not needed */
+}
+
+/* .gui-button-green span {
+  color: green;
+} */
+
+.disabled .name:not(#lil-gui-name-25):not(#lil-gui-name-26) {
+  color: #a2db3c;
+  opacity: 1 !important;
+}
+
+.lil-gui .controller.disabled {
+  opacity: 1 !important;
+}
+
+.lil-gui .controller.disabled.record {
+  opacity: 0.5 !important;
+}
+
+.selected .name {
+  color: #a2db3c;
+}
